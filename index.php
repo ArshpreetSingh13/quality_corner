@@ -30,6 +30,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+   
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -48,39 +49,46 @@
     <!-- Spinner End -->
 
  <!-- header section strats -->
- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://media.starquik.com/bannerslider/n/p/npobe_cadbury_cadbury_1400x400.jpg" alt="First slide">
+ <div class="container-fluid A">
+        <div class="row">
+        <div class="col-md-12 col-lg-12">
+                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active rounded">
+                            <img src="https://media.starquik.com/bannerslider/n/p/npobe_cadbury_cadbury_1400x400.jpg" class="img-fluid w-100 h-100 bg-secondary rounded"
+                                alt="First slide">
+                           
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="https://media.starquik.com/bannerslider/s/t/startquik_nivea_fl_24_post_1400x400.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                          
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="https://media.starquik.com/bannerslider/h/a/half_price_jan_2025fl.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                          
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://media.starquik.com/bannerslider/s/t/startquik_nivea_fl_24_post_1400x400.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://media.starquik.com/bannerslider/h/a/half_price_jan_2025fl.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
     <!-- end header section -->
 
    
 
 
     <!-- Navbar start -->
-    <div class="container-fluid sticky-top bg-white ">
+    <div class="container-fluid sticky-top bg-white A">
     
         <div class="container  topbar bg-primary d-none d-lg-block">
             

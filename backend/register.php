@@ -11,8 +11,8 @@ $city= $_REQUEST["city"];
 
 
 
-// db create
-$db=mysqli_connect("localhost","root", "","my_project");
+// db connect
+$db=mysqli_connect("localhost","root","","my_project");
 
 
 // db insert
