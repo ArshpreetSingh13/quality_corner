@@ -49,7 +49,7 @@
 
 
     <!-- Navbar start -->
-    <div class="container-fluid sticky-top bg-white mt-2">
+    <div class="container-fluid sticky-top bg-white mt-2 A">
     
         <div class="container  topbar bg-primary d-none d-lg-block">
             
@@ -104,7 +104,7 @@
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="register.php" class="my-auto">
+                        <a href="login.php" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>

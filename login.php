@@ -1,7 +1,8 @@
 <?php
 include("heading.php")
-?>
+    ?>
 
+<!-- main start -->
 <main>
     <div class="container-fluid contact py-5">
         <div class="container py-5">
@@ -9,31 +10,34 @@ include("heading.php")
                 <div class="row g-4">
                     <div class="  col-12">
                         <div class="text-center mx-auto" style="max-width: 700px;">
-                            <h1 class="A text-primary">ADD YOUR NEW CATEGORY</h1>
+                            <h1 class="A text-primary">LOGIN</h1>
 
                         </div>
                     </div>
 
                     <div class="  col-lg-6 offset-3">
-                        <form action="./backend/add_category.php" class=" A" method="post">
+                        <form action="Home.php" class=" A" method="post">
 
-                       <?php
+                        <?php
                         if(isset($_GET['msg'])){
                             echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
                         }
-                        ?>
                         
-                      
+                        ?>
 
-                            <!-- category_name -->
-                            <input type="text" class="A w-100 form-control border-0 py-3 mb-4 " name="category_name"
-                                placeholder="Enter Your Category Name">
 
-                            <!--image -->
-                            <input type="text" class="A w-100 form-control border-0 py-3 mb-4" name="image"
-                                placeholder="Enter Your Image Name">
+                            <!-- email -->
+                            <input type="email" class="A w-100 form-control border-0 py-3 mb-4 " name="email"
+                                placeholder="Enter Your Email">
 
-                            
+                            <!-- password -->
+                            <input type="password" class="A w-100 form-control border-0 py-3 mb-4" name="password"
+                                placeholder="Enter Your password">
+
+                            <div class="d-flex justify-content-end">
+                                <a href="register.php" class="">Register Here? </a>
+                                <p>if new user</p>
+                            </div>
 
 
 
@@ -48,7 +52,9 @@ include("heading.php")
         </div>
     </div>
 </main>
+<!-- main end -->
+
 
 <?php
 include("footer.php")
-?>
+    ?>

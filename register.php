@@ -16,7 +16,7 @@ include("heading.php")
                     </div>
 
                     <div class="  col-lg-6 offset-3">
-                        <form action="./backend/register.php" class=" B">
+                        <form action="./backend/register.php" class=" B" method="post">
 
                             <!-- name -->
                             <input type="text" class="B w-100 form-control border-0 py-3 mb-4" placeholder="Your Name" name="name">
