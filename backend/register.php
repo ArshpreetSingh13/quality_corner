@@ -12,7 +12,7 @@ $city= $_REQUEST["city"];
 
 
 // db connect
-include("../db.php");
+include("../config.php");
 
 
 // db insert

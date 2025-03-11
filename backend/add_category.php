@@ -3,7 +3,7 @@
 $category_name=$_REQUEST["category_name"];
 $image=$_REQUEST["image"];
 
-include("../db.php");
+include("../config.php");
 
 
 $query="INSERT INTO `category`( `category_name`, `image`) VALUES ('$category_name','$image')";
