@@ -119,7 +119,7 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link ">Home</a>
-                        <a href="shop.php" class="nav-item nav-link">Shop</a>
+                        <a href="categories.php" class="nav-item nav-link">Categories</a>
                         <a href="shop-detail.php" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Pages</a>

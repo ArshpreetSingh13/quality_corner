@@ -9,20 +9,15 @@ include("heading.php")
                 <div class="row g-4">
                     <div class="  col-12">
                         <div class="text-center mx-auto" style="max-width: 700px;">
-                        <?php
-                        if(isset($_GET['msg'])){
-                            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
-                        }
-
-                        ?>
                         
-                            <h1 class="A text-primary">ADD YOUR NEW CATEGORY</h1>
+                        
+                            <h1 class="A text-primary">UPDATE YOUR CATEGORY</h1>
 
                         </div>
                     </div>
 
                     <div class="  col-lg-6 offset-3">
-                        <form action="add_categoryB.php" class=" A" method="post" enctype="multipart/form-data">
+                        <form  class=" A" method="post" enctype="multipart/form-data">
 
                        
                         
@@ -42,7 +37,7 @@ include("heading.php")
 
                             <!-- button -->
                             <button class="A w-100 btn form-control border-secondary py-3 bg-white text-primary "
-                                type="submit">Submit</button>
+                                type="submit" name="">Submit</button>
                         </form>
                     </div>
 
@@ -55,3 +50,21 @@ include("heading.php")
 <?php
 include("footer.php")
 ?>
+
+
+
+<?php
+
+include("config.php");
+
+$query="SELECT * FROM `category` ";
+
+$res=mysqli_query($db,$query);
+
+
+
+?>
+
+
+
+
