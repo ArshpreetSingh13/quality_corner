@@ -29,12 +29,12 @@ include("heading.php")
                       
 
                             <!-- category_name -->
-                            <input type="text" class="A w-100 form-control border-0 py-3 mb-4 " name="category_name"
-                                placeholder="Enter Your Category Name">
+                            <input type="text" required class="A w-100 form-control border-0 py-3 mb-4 " name="category_name"
+                                placeholder="Enter Your Category Name" >
 
                             <!--image -->
                             <input type="file" class="A w-100 form-control border-0 py-3 mb-4" name="image"
-                                placeholder="Enter Your Image Name">
+                                placeholder="Enter Your Image Name" required>
 
                             
 
