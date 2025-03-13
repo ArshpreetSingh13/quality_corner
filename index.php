@@ -126,7 +126,7 @@
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="add_category.php" class="dropdown-item">Add Category</a>
                                 <a href="manage_category.php" class="dropdown-item">Manage Category</a>
-                                <a href="chackout.php" class="dropdown-item">Chackout</a>
+                                <a href="add_product.php" class="dropdown-item">Add Product</a>
                                 <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                                 <a href="404.php" class="dropdown-item active">404 Page</a>
                             </div>
