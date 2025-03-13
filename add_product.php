@@ -25,7 +25,12 @@ include("./heading.php");
                         <form  class=" A" method="post" enctype="multipart/form-data">
 
                        
-                        
+                        <?php
+                        if(isset($_GET['msg'])){
+                            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
+                        }
+
+                        ?>
                       
 
                             <!-- category_name -->
@@ -43,6 +48,7 @@ include("./heading.php");
                             <textarea name="description" class="B w-100 form-control border-0 py-3 mb-4" required placeholder="Add Your Description"></textarea>
 
                             <select name="category" class="B w-100 form-control border-0 py-3 mb-4" >
+                            <option value="" disabled selected>Select Your Iteam </option>
                                 <?php
                                 include("config.php");
 
@@ -97,17 +103,25 @@ if(isset($_REQUEST["submit_btn"])){
 
     $new_name=rand()."-".$image["name"];
 
-    move_uploaded_file($tmp,"image/".$new_name);
+    move_uploaded_file($tmp,"images/".$new_name);
     
    
     include("config.php");
 
-    $query="INSERT INTO `products`( `product_name`, `price`, `category`, `image`, `description`) VALUES ('$product_name','$price','$new_name','$description','$category')";
+    $query="INSERT INTO `products`( `product_name`, `price`, `category`, `image`, `description`) VALUES ('$product_name','$price','$category','$new_name','$description')";
 
 
-    echo $query;
+   
+    
 
-    // $res=mysqli_query($db,$query);
+    $res=mysqli_query($db,$query);
+
+    if($res>0){
+        echo "<script>window.location.assign('add_product.php?msg=Product Added')</script>";
+    }
+    else{
+        echo "<script>window.location.assign('add_product.php?msg=Product is not Added')</script>";
+    }
 
 }
 
