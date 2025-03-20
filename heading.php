@@ -93,6 +93,23 @@
                             </div>
                         </div>
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
+
+                        <?php
+
+                        if(isset($_SESSION["email"])){
+                           echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
+                        }
+
+                        else{
+                            echo "<a href='admin_login.php' class='nav-item nav-link'>Admin Login</a>";
+                        }
+
+                        ?>
+                        
+
+                       
+
+
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button
