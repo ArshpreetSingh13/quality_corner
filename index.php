@@ -1,173 +1,24 @@
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Fruitables - Vegetable Website Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
-        rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/add.css" rel="stylesheet">
-</head>
-
-<body>
-
-
-
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
- <!-- header section strats -->
- <div class="container-fluid A">
-        <div class="row">
-        <div class="col-md-12 col-lg-12">
-                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active rounded">
-                            <img src="https://media.starquik.com/bannerslider/n/p/npobe_cadbury_cadbury_1400x400.jpg" class="img-fluid w-100 h-100 bg-secondary rounded"
-                                alt="First slide">
-                           
-                        </div>
-                        <div class="carousel-item rounded">
-                            <img src="https://media.starquik.com/bannerslider/s/t/startquik_nivea_fl_24_post_1400x400.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                          
-                        </div>
-                        <div class="carousel-item rounded">
-                            <img src="https://media.starquik.com/bannerslider/h/a/half_price_jan_2025fl.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
-                          
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end header section -->
-
-   
-
-
-    <!-- Navbar start -->
-    <div class="container-fluid sticky-top bg-white A">
-    
-        <div class="container  topbar bg-primary d-none d-lg-block">
-            
-            <div class="d-flex justify-content-between">
-            
-                <div class="top-info ps-2">
-                    <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
-                            class="text-white">123 Street, New York</a></small>
-                    <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-white">arshpreetsingh1327@gmail.com</a></small>
-                </div>
-                <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
-                </div>
-            </div>
-        </div>
-        <div class="container px-0 ">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.php" class="navbar-brand">
-                    <h1 class="text-primary display-6">QUALITY CORNER</h1>
-                </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                    <div class="navbar-nav mx-auto">
-                        <a href="index.php" class="nav-item nav-link ">Home</a>
-                        <a href="categories.php" class="nav-item nav-link">Categories</a>
-                        <a href="shop-detail.php" class="nav-item nav-link">Shop Detail</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="add_category.php" class="dropdown-item">Add Category</a>
-                                <a href="manage_category.php" class="dropdown-item">Manage Category</a>
-                                <a href="add_product.php" class="dropdown-item">Add Product</a>
-                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                                <a href="404.php" class="dropdown-item active">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <div class="d-flex m-3 me-0">
-                        <button
-                            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-                            data-bs-toggle="modal" data-bs-target="#searchModal"><i
-                                class="fas fa-search text-primary"></i></button>
-                        <a href="#" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span
-                                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="login.php" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
+<?php
+include("heading.php")
+    ?>
+<!-- Navbar End -->
 
 
 <!-- Hero Start -->
 <div class="container-fluid py-5 mb-5 hero-header">
-    <div class=" B container py-5">
+    <div class=" A container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">
                 <h4 class="mb-3 text-secondary">100% Organic Foods</h4>
                 <h1 class="mb-5 display-3 text-primary">Organic Veggies & Fruits Foods</h1>
                 <div class="position-relative mx-auto">
-                    <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number"
-                        placeholder="Search">
-                    <button type="submit"
-                        class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
-                        style="top: 0; right: 25%;">Submit Now</button>
+                    <form action="" method="GET">
+                        <input class="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="text"
+                            placeholder="Search" value="<?php if(isset($_GET['search'])){ echo $_GET['search'] ;}?>" name="search">
+                        <button type="submit"
+                            class="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
+                            style="top: 0; right: 25%;">Submit Now</button>
+                    </form>
                 </div>
             </div>
             <div class="col-md-12 col-lg-5">
@@ -316,7 +167,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -337,7 +189,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -358,7 +211,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -379,7 +233,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Apricots</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -400,7 +255,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Banana</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -421,7 +277,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Oranges</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -442,7 +299,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -463,7 +321,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -492,7 +351,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -513,7 +373,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -542,7 +403,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Oranges</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -563,7 +425,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Apple</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -592,7 +455,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Grapes</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -613,7 +477,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Apricots</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -642,7 +507,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Banana</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -663,7 +529,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Raspberries</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -684,7 +551,8 @@
                                             style="top: 10px; left: 10px;">Fruits</div>
                                         <div class="p-4 border border-secondary border-top-0 rounded-bottom">
                                             <h4>Oranges</h4>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do
+                                                eiusmod te
                                                 incididunt</p>
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
@@ -932,7 +800,8 @@
     <div class="container py-5">
         <div class="text-center mx-auto mb-5 C" style="max-width: 700px;">
             <h1 class="display-4">Bestseller Products</h1>
-            <p>Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks
+            <p>Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which
+                looks
                 reasonable.</p>
         </div>
         <div class="row g-4 ">
@@ -1199,7 +1068,8 @@
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                         style="bottom: 30px; right: 0;"></i>
                     <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                            industry's
                             standard dummy text ever since the 1500s,
                         </p>
                     </div>
@@ -1227,7 +1097,8 @@
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                         style="bottom: 30px; right: 0;"></i>
                     <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                            industry's
                             standard dummy text ever since the 1500s,
                         </p>
                     </div>
@@ -1255,7 +1126,8 @@
                     <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
                         style="bottom: 30px; right: 0;"></i>
                     <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry's
+                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
+                            industry's
                             standard dummy text ever since the 1500s,
                         </p>
                     </div>
@@ -1285,5 +1157,5 @@
 
 
 <?php
-    include("footer.php")
-?>
+include("footer.php")
+    ?>

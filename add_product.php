@@ -1,6 +1,5 @@
 <?php
-include("./heading.php");
-?>
+include("admin_heading.php")?>
 
 <main>
     <div class="container-fluid contact py-5">
@@ -9,12 +8,7 @@ include("./heading.php");
                 <div class="row g-4">
                     <div class="  col-12">
                         <div class="text-center mx-auto" style="max-width: 700px;">
-                        <?php
-                        if(isset($_GET['msg'])){
-                            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
-                        }
-
-                        ?>
+                       
                         
                             <h1 class="A text-primary">ADD YOUR NEW PRODUCT</h1>
 
@@ -38,7 +32,7 @@ include("./heading.php");
                                 placeholder="Enter Your Product Name" >
 
                             <!-- price -->
-                            <input type="number" required class="A w-100 form-control border-0 py-3 mb-4 " name="price"
+                            <input type="number" required class="A w-100 form-control border-0 py-3 mb-4 " min="0" name="price"
                                 placeholder="Enter Your Price" >
 
                             <!--image -->

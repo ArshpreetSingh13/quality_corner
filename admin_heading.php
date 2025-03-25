@@ -84,12 +84,7 @@
                         
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
 
-                        <?php
-
-                        if(isset($_SESSION["email"])){
-                           
-                           ?>
-                           <div class="nav-item dropdown">
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">admin</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="add_category.php" class="dropdown-item">Add Category</a>
@@ -100,15 +95,13 @@
                             </div>
                         </div>
 
-                           <?php
-                           echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
-                        }
+                       
+                           
+                           
+                           <a href='Logout.php' class='nav-item nav-link'>Logout</a>
+                       
 
-                        else{
-                            echo "<a href='admin_login.php' class='nav-item nav-link'>Admin Login</a>";
-                        }
-
-                        ?>
+                       
                         
 
                        

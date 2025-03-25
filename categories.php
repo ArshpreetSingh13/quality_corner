@@ -71,8 +71,11 @@ include("heading.php");
                             while ($data = mysqli_fetch_assoc($res)) {
 
                                 ?>
-                                <div class="col-md-6 col-lg-6 col-xl-4 B">
+
+                                
+                                <div class="col-md-6 col-lg-6 col-xl-4  B">
                                     <div class="rounded position-relative fruite-item ">
+                                    <a class="" href="manage_product.php?id=<?php echo $data['id'];?>">
                                         <div class="fruite-img">
                                             <img src="category_image/<?php 
                                              echo $data['image'];
@@ -86,8 +89,12 @@ include("heading.php");
                                                 ?>
                                             </h4>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
+
+                              
+                               
                                 <?php
 
                             }

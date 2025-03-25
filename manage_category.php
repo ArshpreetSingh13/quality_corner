@@ -1,6 +1,5 @@
 <?php
-include("heading.php");
-?>
+include("admin_heading.php")?>
 <!-- Modal Search End -->
 
 
