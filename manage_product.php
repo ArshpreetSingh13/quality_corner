@@ -62,10 +62,10 @@ include("admin_heading.php")?>
                     </a>
 
 
-                    <a href="update_category.php?id=<?php echo $data['id']; ?>" class="text-white">
+                    <a href="update_product.php?id=<?php echo $data['id']; ?>" class="text-white">
 
                         <button class="btn text-white bg-secondary px-3 py-1 rounded position-absolute"
-                            style="top: 10px; left: 180px;">
+                            style="top: 10px; left: 150px;">
 
                             Update
                         </button>

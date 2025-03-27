@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("heading.php");
 ?>
         <!-- Single Page Header End -->

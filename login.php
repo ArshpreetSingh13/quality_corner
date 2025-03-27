@@ -70,6 +70,8 @@ if(isset($_REQUEST['submit_btn'])){
     echo $_SESSION["email"]=$email;
     $_SESSION["password"]=$password;
 
+    echo "<script>window.location.assign('index.php')</script>";
+
 
 }
 ?>

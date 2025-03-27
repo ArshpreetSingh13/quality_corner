@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("heading.php");
 ?>
 <!-- Modal Search End -->

@@ -5,7 +5,12 @@ include("heading.php") ?>
 
 <div class="container-fluid">
     <div class="row my-5 mx-5 px-5 ">
+        <?php
+        if (isset($_GET['msg'])) {
+            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
+        }
 
+        ?>
 
 
 
@@ -50,11 +55,20 @@ include("heading.php") ?>
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
 
-                           
 
-                            <form action="">
-                                <input type="hidden" value="<?php echo $data['id']?>" name="pid">
-                                <button class="btn border border-secondary rounded-pill px-3 text-primary" name="submit_btn">
+
+                            <form>
+
+
+                                <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
+
+                                <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
+
+                                <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
+
+
+                                <button class="btn border border-secondary rounded-pill px-3 text-primary"
+                                    name="submit_btn">
 
                                     <i class="fa fa-shopping-bag me-2 text-primary"></i>
                                     Add to
@@ -96,22 +110,59 @@ include("footer.php")
 
 
 
-if(isset($_REQUEST['submit_btn'])){
+if (isset($_REQUEST['submit_btn'])) {
 
-    
+
     include("config.php");
-    $user="SELECT * FROM `user`";
-    $user_res=mysqli_query($db,$user);
-    $user_data=mysqli_fetch_assoc($user_res);
-    
-    
-    
-    $email=$user_data['email'];
-    $pid=$_REQUEST['pid'];
-    
-    if($user_data['email']=$_SESSION['email']){
-        $cart="INSERT INTO `cart`( `user`, `product`, `quantity`, `price`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')";
+    $email = $_SESSION['email'];
+    $pid = $_REQUEST['pid'];
+    $pageid = $_REQUEST['pageid'];
+
+    $cart = "SELECT * FROM `cart` WHERE `name` = '$email' and `product`=$pid";
+    $cart_res = mysqli_query($db, $cart);
+    $cart_data = mysqli_fetch_assoc($cart_res);
+
+
+
+    $price = $_GET['price'];
+
+
+    $count = 1;
+
+    if ($cart_data['name'] == $_SESSION['email'] and $cart_data['product'] == $pid) {
+
+
+
+
+        $count = $cart_data['quantity'];
+
+        $id = $cart_data['id'];
+        $count = $count + 1;
+
+
+        $cart_update = "UPDATE `cart` SET `quantity`='$count' WHERE `id`='$id'";
+        $cart_updated = mysqli_query($db, $cart_update);
+
+    } else {
+
+        $cart_insert = "INSERT INTO `cart`(`name`, `product`, `quantity`, `price`) VALUES ('$email','$pid','$count','$price')";
+
+        $cart_result = mysqli_query($db, $cart_insert);
+
+
+
+
+
+
+
+
+
+
+
     }
+
+    echo "<script>window.location.assign('product.php?id=$pageid&msg=Added to cart ')</script>";
+
 }
 
 
