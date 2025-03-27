@@ -88,19 +88,7 @@
 
                         if(isset($_SESSION["email"])){
                            
-                           ?>
-                           <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">admin</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="add_category.php" class="dropdown-item">Add Category</a>
-                                <a href="manage_category.php" class="dropdown-item">Manage Category</a>
-                                <a href="add_product.php" class="dropdown-item">Add Product</a>
-                                <a href="manage_product.php" class="dropdown-item">Manage Product</a>
-                                <a href="404.php" class="dropdown-item active">404 Page</a>
-                            </div>
-                        </div>
-
-                           <?php
+                           
                            echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
                         }
 
@@ -116,10 +104,7 @@
 
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <button
-                            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-                            data-bs-toggle="modal" data-bs-target="#searchModal"><i
-                                class="fas fa-search text-primary"></i></button>
+                    
                         <a href="#" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span

@@ -5,8 +5,8 @@ session_start();
 if(!isset($_SESSION["email"])){
     echo "<script>window.location.assign('admin_login.php?msg=please Login ')</script>";
 }
-    
-include("admin_heading.php")
+
+include("heading.php")
     ?>
 
 <main>
@@ -23,7 +23,7 @@ include("admin_heading.php")
 
                             ?>
 
-                            <h1 class="A text-primary">ADD COUPON</h1>
+                            <h1 class="A text-primary">UPDATE COUPON</h1>
 
                         </div>
                     </div>
@@ -77,32 +77,38 @@ include("admin_heading.php")
         </div>
     </div>
 </main>
-
 <?php
 include("footer.php")
-?>
+    ?>
 
 
 <?php
+
 if (isset($_REQUEST["submit_btn"])) {
+   $id=$_GET['id'];
     $code = $_REQUEST["code"];
     $discount = $_REQUEST["discount"];
     $type = $_REQUEST["type"];
     $term = $_REQUEST["term"];
     $minamt = $_REQUEST["minamt"];
 
+  
     include("config.php");
-    echo $query = "INSERT INTO `coupon`( `code`, `discount`, `type`, `term`, `minamt`) VALUES ('$code','$discount','$type','$term','$minamt')";
 
- 
-    $res=mysqli_query($db,$query);
 
-    if($res>0){
-    echo "<script>window.location.assign('add_coupon.php?msg=coupon Added')</script>";
-}
-else{
-    echo "<script>window.location.assign('add_coupon.php?msg=coupon is not Added')</script>";
-}
+  
+
+       $query="UPDATE `coupon` SET `code`='$code',`discount`='$discount',`type`='$type',`term`='$term',`minamt`='$minamt' WHERE id='$id'";
+
+    $res = mysqli_query($db, $query);
+
+
+    if ($res > 0) {
+        echo "<script>window.location.assign('manage_coupon.php?msg=Coupon updated')</script>";
+    } else {
+        echo "<script>window.location.assign('manage_coupon.php?msg=Coupon is not updated')</script>";
+    }
+
 }
 
 

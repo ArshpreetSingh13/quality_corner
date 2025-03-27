@@ -36,6 +36,7 @@
 
 
 
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -91,7 +92,10 @@
                                 <a href="manage_category.php" class="dropdown-item">Manage Category</a>
                                 <a href="add_product.php" class="dropdown-item">Add Product</a>
                                 <a href="manage_product.php" class="dropdown-item">Manage Product</a>
-                                <a href="404.php" class="dropdown-item active">404 Page</a>
+                                
+                                <a href="add_coupon.php" class="dropdown-item">Add Coupon</a>
+                                <a href="manage_coupon.php" class="dropdown-item">Manage Coupon</a>
+                                
                             </div>
                         </div>
 
@@ -109,10 +113,7 @@
 
                     </div>
                     <div class="d-flex m-3 me-0">
-                        <button
-                            class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
-                            data-bs-toggle="modal" data-bs-target="#searchModal"><i
-                                class="fas fa-search text-primary"></i></button>
+                       
                         <a href="#" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span

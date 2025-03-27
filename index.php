@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 include("heading.php")
     ?>
 <!-- Navbar End -->

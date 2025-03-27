@@ -7,7 +7,7 @@ if(!isset($_SESSION["email"])){
 
 }
 
-include("heading.php");
+include("admin_heading.php");
 ?>
 <div class="container-fluid fruite py-5">
     <div class="container py-5">

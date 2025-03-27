@@ -1,4 +1,5 @@
 <?php
+ session_start();
 include("heading.php")
     ?>
 
@@ -16,7 +17,7 @@ include("heading.php")
                     </div>
 
                     <div class="  col-lg-6 offset-3">
-                        <form action="Home.php" class=" A" method="post">
+                        <form  class=" A" method="post">
 
                         <?php
                         if(isset($_GET['msg'])){
@@ -43,7 +44,7 @@ include("heading.php")
 
                             <!-- button -->
                             <button class="A w-100 btn form-control border-secondary py-3 bg-white text-primary "
-                                type="submit">Submit</button>
+                                type="submit" name="submit_btn">Submit</button>
                         </form>
                     </div>
 
@@ -58,3 +59,17 @@ include("heading.php")
 <?php
 include("footer.php")
     ?>
+
+<?php
+if(isset($_REQUEST['submit_btn'])){
+
+   
+    $email=$_REQUEST["email"];
+    $password=md5($_REQUEST["password"]);
+
+    echo $_SESSION["email"]=$email;
+    $_SESSION["password"]=$password;
+
+
+}
+?>

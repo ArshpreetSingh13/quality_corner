@@ -1,22 +1,13 @@
 <?php
 
 session_start();
-
-if(!isset($_SESSION["email"])){
-    echo "<script>window.location.assign('admin_login.php?msg=please Login ')</script>";
-}
-include("admin_heading.php")?>
+include("heading.php") ?>
 
 <div class="container-fluid">
     <div class="row my-5 mx-5 px-5 ">
 
 
-        <?php
-        if (isset($_GET['msg'])) {
-            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
-        }
 
-        ?>
 
 
 
@@ -29,13 +20,12 @@ include("admin_heading.php")?>
         
 
 
-        if(isset($_GET["id"])){
+        if (isset($_GET["id"])) {
             $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id WHERE products.category= $_GET[id]";
-        }
-        else{
+        } else {
             $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id ";
         }
-        
+
 
 
         $res = mysqli_query($db, $query);
@@ -52,25 +42,6 @@ include("admin_heading.php")?>
                             style=" height: 200px ; width: 100%;">
                     </div>
 
-                    <a href="delete_product.php?id=<?php echo $data['id']; ?>" class="text-white">
-                        <button class="text-white bg-secondary btn px-3 py-1 rounded position-absolute"
-                            style="top: 10px; left: 10px;" name="delete">
-
-                            Delete
-                        </button>
-
-                    </a>
-
-
-                    <a href="update_category.php?id=<?php echo $data['id']; ?>" class="text-white">
-
-                        <button class="btn text-white bg-secondary px-3 py-1 rounded position-absolute"
-                            style="top: 10px; left: 180px;">
-
-                            Update
-                        </button>
-
-                    </a>
 
 
                     <div class="px-3 py-3 ">
@@ -78,9 +49,19 @@ include("admin_heading.php")?>
                         <p><?php echo $data['description'] ?></p>
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                cart</a>
+
+                           
+
+                            <form action="">
+                                <input type="hidden" value="<?php echo $data['id']?>" name="pid">
+                                <button class="btn border border-secondary rounded-pill px-3 text-primary" name="submit_btn">
+
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i>
+                                    Add to
+                                    cart
+
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -109,3 +90,30 @@ include("admin_heading.php")?>
 <?php
 include("footer.php")
     ?>
+
+
+<?php
+
+
+
+if(isset($_REQUEST['submit_btn'])){
+
+    
+    include("config.php");
+    $user="SELECT * FROM `user`";
+    $user_res=mysqli_query($db,$user);
+    $user_data=mysqli_fetch_assoc($user_res);
+    
+    
+    
+    $email=$user_data['email'];
+    $pid=$_REQUEST['pid'];
+    
+    if($user_data['email']=$_SESSION['email']){
+        $cart="INSERT INTO `cart`( `user`, `product`, `quantity`, `price`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')";
+    }
+}
+
+
+
+?>

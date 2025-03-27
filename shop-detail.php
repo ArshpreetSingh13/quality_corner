@@ -5,10 +5,10 @@ include("heading.php");
 
 
         <!-- Single Product Start -->
-        <div class="container-fluid py-5 mt-5">
+        <div class="container-fluid py-5 mt-5 "  data-aos="fade-up" data-aos-delay="100">
             <div class="container py-5">
                 <div class="row g-4 mb-5">
-                    <div class="col-lg-8 col-xl-9">
+                    <div class="col-lg-8 col-xl-9 " >
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="border rounded">
@@ -18,7 +18,7 @@ include("heading.php");
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <h4 class="fw-bold mb-3">Brocoli</h4>
+                                <h4 class="fw-bold mb-3" >Brocoli</h4>
                                 <p class="mb-3">Category: Vegetables</p>
                                 <h5 class="fw-bold mb-3">3,35 $</h5>
                                 <div class="d-flex mb-4">
