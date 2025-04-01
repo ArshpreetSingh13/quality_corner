@@ -45,16 +45,16 @@
 
 
 
-   
+
 
 
     <!-- Navbar start -->
     <div class="container-fluid sticky-top bg-white mt-2 A">
-    
+
         <div class="container  topbar bg-primary d-none d-lg-block">
-            
+
             <div class="d-flex justify-content-between">
-            
+
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
                             class="text-white">123 Street, New York</a></small>
@@ -81,35 +81,50 @@
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link">Home</a>
                         <a href="categories.php" class="nav-item nav-link">Categories</a>
-                        
+
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
 
                         <?php
 
-                        if(isset($_SESSION["email"])){
-                           
-                           
-                           echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
-                        }
+                        if (isset($_SESSION["email"])) {
 
-                        else{
+
+                            echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
+                        } else {
                             echo "<a href='admin_login.php' class='nav-item nav-link'>Admin Login</a>";
                         }
 
                         ?>
-                        
 
-                       
+
+
 
 
                     </div>
                     <div class="d-flex m-3 me-0">
-                    
+
                         <a href="cart.php" class="position-relative me-4 my-auto">
                             <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span
-                                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                            <?php
+
+                            include("config.php");
+
+                            if (isset($_SESSION["email"])) {
+                                $email = $_SESSION['email'];
+
+                                $query = "SELECT count(*) as total From `cart` WHERE `name` = '$email'";
+
+                                $res = mysqli_query($db, $query);
+                                $data = mysqli_fetch_assoc($res);
+
+                                ?>
+                                <span
+                                    class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                    style="top: -5px; left: 15px; height: 20px; min-width: 20px;"><?php echo $data['total'] ?></span>
+                                <?php
+                            } 
+                            ?>
+
                         </a>
                         <a href="login.php" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>

@@ -66,12 +66,22 @@ if(isset($_REQUEST['submit_btn'])){
    
     $email=$_REQUEST["email"];
     $password=md5($_REQUEST["password"]);
+include("config.php");
+$query="SELECT * from `admin` where `email`='$email' and `password`='$password'";
 
-    echo $_SESSION["email"]=$email;
-    $_SESSION["password"]=$password;
+$res=mysqli_query($db,$query);
 
-    echo "<script>window.location.assign('index.php')</script>";
+    if(mysqli_num_rows($res)>0){
 
+        session_start();
 
+        $_SESSION["email"]=$email;
+        $_SESSION["password"]=$password;
+
+        echo "<script>window.location.assign('index.php')</script>";
+    }
+    else{
+        echo "<script>window.location.assign('login.php?msg=Invaild creeds')</script>";
+    }
 }
 ?>

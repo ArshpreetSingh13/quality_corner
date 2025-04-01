@@ -51,8 +51,8 @@ include("admin_heading.php")
                             <select name="type" class="B w-100 form-control border-0 py-3 mb-4">
                                 <option value="" disabled selected>Enter Your discount type </option>
 
-                                <option value="flat">Flat </option>
-                                <option value="rupees">Rupees </option>
+                                <option value="1">Flat </option>
+                                <option value="2">Percentage </option>
 
                             </select>
 
