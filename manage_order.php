@@ -22,12 +22,7 @@ include("admin_heading.php")
 
 <div class="container-fluid my-5 py-5">
 
-<?php
-        if (isset($_GET['msg'])) {
-            echo "<div class='alert alert-primary text-center' role='alert'> $_GET[msg]</div>";
-        }
 
-        ?>
     <table class="table table-striped table-hover">
         <tr>
             <th>Order Date</th>
@@ -42,8 +37,17 @@ include("admin_heading.php")
         <?php
         include("config.php");
        
+        $orders="SELECT * FROM `orders`";
+        $orders_res=mysqli_query($db,$order);
+        $orders_data=mysqli_fetch_assoc($orders_data);
+        if(isset($orders_data['coupon_id'])>0){
+            $query = "SELECT orders.*, coupon.code FROM `orders` INNER JOIN `coupon` on orders.coupon_id=coupon.id ";
+        }
+        else{
+            $query = "SELECT * FROM `orders` ";
+        }
 
-        $query = "SELECT orders.*, coupon.code FROM `orders` INNER JOIN `coupon` on orders.coupon_id=coupon.id ";
+       
 
         $res = mysqli_query($db, $query);
         while($data = mysqli_fetch_assoc($res)) {
@@ -59,7 +63,7 @@ include("admin_heading.php")
                 
                 <td><a class="btn btn-primary text-white" href="order_details.php?id=<?php echo $data['id']; ?>">View</a></td>
 
-                <td><a class="btn btn-success text-white" href="#?id=<?php echo $data['id']; ?>">Approve</a><br>
+                <td><a class="btn btn-success text-white" href="update_order?id=<?php echo $data['id'] ?>&status=Approve">Approve</a><br>
                 <a class="btn btn-danger text-white mt-2" href="#?id=<?php echo $data['id']; ?>">Decline</a></</td>
             </tr>
             <?php
