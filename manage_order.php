@@ -23,10 +23,7 @@ include("admin_heading.php")
 <div class="container-fluid my-5 py-5">
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9371d7f4aec1772fd8ebef76603753b58a8e198b
     <table class="table table-striped table-hover">
         <tr>
             <th>Order Date</th>
@@ -68,7 +65,6 @@ include("admin_heading.php")
 
         <?php
         include("config.php");
-<<<<<<< HEAD
 
         if (isset($_REQUEST['sort_btn'])) {
             $sort=$_REQUEST['sort'];
@@ -95,20 +91,6 @@ include("admin_heading.php")
 
 
 
-=======
-       
-        $orders="SELECT * FROM `orders`";
-        $orders_res=mysqli_query($db,$order);
-        $orders_data=mysqli_fetch_assoc($orders_data);
-        if(isset($orders_data['coupon_id'])>0){
-            $query = "SELECT orders.*, coupon.code FROM `orders` INNER JOIN `coupon` on orders.coupon_id=coupon.id ";
-        }
-        else{
-            $query = "SELECT * FROM `orders` ";
-        }
-
-       
->>>>>>> 9371d7f4aec1772fd8ebef76603753b58a8e198b
 
         $res = mysqli_query($db, $query);
         while ($data = mysqli_fetch_assoc($res)) {
@@ -124,7 +106,6 @@ include("admin_heading.php")
                 <td><?php echo $data['total']; ?></td>
                 <td><?php echo $cpn_data['code']; ?></td>
 
-<<<<<<< HEAD
                 <td><a class="btn btn-primary text-white" href="order_details.php?id=<?php echo $data['id']; ?>">View</a>
                 </td>
 
@@ -173,10 +154,6 @@ include("admin_heading.php")
                 ?>
 
                     <a class="btn btn-danger text-white mt-2" href="?id=<?php echo $data['id']; ?>">Decline</a></< /td>
-=======
-                <td><a class="btn btn-success text-white" href="update_order?id=<?php echo $data['id'] ?>&status=Approve">Approve</a><br>
-                <a class="btn btn-danger text-white mt-2" href="#?id=<?php echo $data['id']; ?>">Decline</a></</td>
->>>>>>> 9371d7f4aec1772fd8ebef76603753b58a8e198b
             </tr>
             <?php
         }

@@ -62,16 +62,10 @@ include("admin_heading.php")
                 <p><?php echo $data['price']; ?></p>
                 <p><?php echo $data['quantity']; ?></p>
 
-<<<<<<< HEAD
             
             </div>
             <div class="container"><hr></div>
 
-=======
-
-            </div>
-
->>>>>>> 9371d7f4aec1772fd8ebef76603753b58a8e198b
             <?php
         }
 
