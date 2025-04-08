@@ -45,12 +45,12 @@ include("admin_heading.php")
         $query = "SELECT * FROM `order_details` WHERE  order_id ='$id'";
 
         $res = mysqli_query($db, $query);
-        $count=0;
+        $count = 0;
         while ($data = mysqli_fetch_assoc($res)) {
             $product = "SELECT * FROM `products` WHERE id='$data[product]'";
             $Pres = mysqli_query($db, $product);
             $Pdata = mysqli_fetch_assoc($Pres);
-            $count+=1;
+            $count += 1;
 
 
             ?>
@@ -62,9 +62,11 @@ include("admin_heading.php")
                 <p><?php echo $data['price']; ?></p>
                 <p><?php echo $data['quantity']; ?></p>
 
-            
+
             </div>
-            <div class="container"><hr></div>
+            <div class="container">
+                <hr>
+            </div>
 
             <?php
         }

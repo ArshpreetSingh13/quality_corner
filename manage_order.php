@@ -40,15 +40,15 @@ include("admin_heading.php")
                     <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
 
                         <label>Default Sorting:</label>
-                        <select name="sort" class="border-0 form-select-sm bg-light me-3" >
-                            <option  selected value="All">All</option>
+                        <select name="sort" class="border-0 form-select-sm bg-light me-3">
+                            <option selected value="All">All</option>
                             <option value="pending">Pending</option>
                             <option value="Approved">Approved</option>
                             <option value="Packed">Packed</option>
                             <option value="TakeAway">TakeAway</option>
                             <option value="Delivered">Delivered</option>
                         </select>
-                       
+
 
 
                     </div>
@@ -67,22 +67,20 @@ include("admin_heading.php")
         include("config.php");
 
         if (isset($_REQUEST['sort_btn'])) {
-            $sort=$_REQUEST['sort'];
-            if($sort=='All'){
-                
-                $query = "SELECT * FROM `orders`  ";
-            }
-            else{
+            $sort = $_REQUEST['sort'];
+            if ($sort == 'All') {
 
-                $query="SELECT * FROM `orders`  WHERE `status`='$sort'";
-                
+                $query = "SELECT * FROM `orders`  ";
+            } else {
+
+                $query = "SELECT * FROM `orders`  WHERE `status`='$sort'";
+
             }
-           
-           
-        }
-        else{
-            
-       $query = "SELECT * FROM `orders`  ";
+
+
+        } else {
+
+            $query = "SELECT * FROM `orders`  ";
         }
 
 
@@ -94,9 +92,9 @@ include("admin_heading.php")
 
         $res = mysqli_query($db, $query);
         while ($data = mysqli_fetch_assoc($res)) {
-            $cpn="SELECT * FROM `coupon` WHERE `id`=$data[coupon_id]";
-            $cpn_res=mysqli_query($db,$cpn);
-            $cpn_data=mysqli_fetch_assoc($cpn_res);
+            $cpn = "SELECT * FROM `coupon` WHERE `id`=$data[coupon_id]";
+            $cpn_res = mysqli_query($db, $cpn);
+            $cpn_data = mysqli_fetch_assoc($cpn_res);
 
             ?>
 
