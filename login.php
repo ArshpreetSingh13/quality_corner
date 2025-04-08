@@ -67,7 +67,7 @@ if(isset($_REQUEST['submit_btn'])){
     $email=$_REQUEST["email"];
     $password=md5($_REQUEST["password"]);
 include("config.php");
-$query="SELECT * from `admin` where `email`='$email' and `password`='$password'";
+$query="SELECT * from `user` where `email`='$email' and `password`='$password'";
 
 $res=mysqli_query($db,$query);
 

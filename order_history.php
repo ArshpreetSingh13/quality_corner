@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION["email"])) {
     echo "<script>window.location.assign('admin_login.php?msg=please Login ')</script>";
 }
-include("admin_heading.php")
+include("heading.php")
     ?>
 <!-- Modal Search End -->
 
@@ -30,8 +30,8 @@ include("admin_heading.php")
             <th>User </th>
             <th>Total </th>
             <th>coupon</th>
+            <th>Status</th>
             <th>View</th>
-            <th>Action</th>
 
         </tr>
         <div class="row">
@@ -41,7 +41,8 @@ include("admin_heading.php")
 
                         <label>Default Sorting:</label>
                         <select name="sort" class="border-0 form-select-sm bg-light me-3" >
-                            <option  selected value="All">All</option>
+                            <option  selected disabled value="0">SELECT</option>
+                            <option   value="All">All</option>
                             <option value="pending">Pending</option>
                             <option value="Approved">Approved</option>
                             <option value="Packed">Packed</option>
@@ -66,15 +67,16 @@ include("admin_heading.php")
         <?php
         include("config.php");
 
+        $email=$_SESSION['email'];
         if (isset($_REQUEST['sort_btn'])) {
             $sort=$_REQUEST['sort'];
             if($sort=='All'){
                 
-                $query = "SELECT * FROM `orders`  ";
+                $query = "SELECT * FROM `orders`  WHERE `user`='$email' ORDER BY id DESC";
             }
             else{
 
-                $query="SELECT * FROM `orders`  WHERE `status`='$sort'";
+                $query="SELECT * FROM `orders`  WHERE `user`='$email'  AND `status`='$sort' ORDER BY id DESC" ;
                 
             }
            
@@ -82,7 +84,7 @@ include("admin_heading.php")
         }
         else{
             
-       $query = "SELECT * FROM `orders`  ";
+       $query = "SELECT * FROM `orders`  WHERE `user`='$email' ORDER BY id DESC";
         }
 
 
@@ -106,54 +108,15 @@ include("admin_heading.php")
                 <td><?php echo $data['total']; ?></td>
                 <td><?php echo $cpn_data['code']; ?></td>
 
-                <td><a class="btn btn-primary text-white" href="order_details.php?id=<?php echo $data['id']; ?>">View</a>
+                <td><p><?php echo $data['status']; ?></p></td>
+
+                <td><a class="btn btn-primary text-white" href="order_his_details.php?id=<?php echo $data['id']; ?>">View</a>
                 </td>
 
-
-                <?php
-                if ($data['status'] == 'pending') {
-                    ?>
-                    <td>
-
-                        <a class="btn btn-success text-white"
-                            href="update_order.php?id=<?php echo $data['id'] ?>&status=Approved">Approved</a><?php echo $data['status']; ?><br>
-                        <?php
-                } else if ($data['status'] == 'Approved') {
-                    ?>
-
-
-                        <td><a class="btn btn-success text-white"
-                                href="update_order.php?id=<?php echo $data['id'] ?>&status=Packed">Packed</a><?php echo $data['status']; ?><br>
-                        <?php
-                } else if ($data['status'] == 'Packed') {
-                    ?>
-
-
-                            <td><a class="btn btn-success text-white"
-                                    href="update_order.php?id=<?php echo $data['id'] ?>&status=TakeAway">Ready for Take
-                                    Away</a><?php echo $data['status']; ?><br>
-                        <?php
-                } else if ($data['status'] == 'TakeAway') {
-                    ?>
-
-
-                                <td><a class="btn btn-success text-white"
-                                        href="update_order.php?id=<?php echo $data['id'] ?>&status=Delivered">Delivered</a><?php echo $data['status']; ?><br>
-                        <?php
-                } else {
-                    ?>
-
-
-                                <td class=" text-success">
-                                    <i class="bi  bi-check-square-fill"></i>
-                        <?php echo $data['status']; ?><br>
-                        <?php
-                }
-
-
-                ?>
-
-                    <a class="btn btn-danger text-white mt-2" href="?id=<?php echo $data['id']; ?>">Decline</a></< /td>
+               
+                    
+                       
+                       
             </tr>
             <?php
         }

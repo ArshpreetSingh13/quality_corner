@@ -127,8 +127,16 @@
 
                         </a>
                         <a href="login.php" class="my-auto">
+                       
                             <i class="fas fa-user fa-2x"></i>
                         </a>
+                        <?php 
+                        if(isset($_SESSION['email'])){
+                            ?>
+                            <p class="pt-4 ps-2"><?php echo $_SESSION['email'];?></p>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </nav>

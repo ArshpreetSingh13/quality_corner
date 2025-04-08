@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION["email"])) {
     echo "<script>window.location.assign('admin_login.php?msg=please Login ')</script>";
 }
-include("admin_heading.php")
+include("heading.php")
     ?>
 <!-- Modal Search End -->
 
