@@ -83,6 +83,7 @@
                         <a href="categories.php" class="nav-item nav-link">Categories</a>
 
                         <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        <a href="order_history.php" class="nav-item nav-link">Orders</a>
 
                         <?php
 
