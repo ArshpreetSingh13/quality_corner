@@ -16,7 +16,7 @@ include("admin_heading.php") ?>
                         <div class="text-center mx-auto" style="max-width: 700px;">
 
 
-                            <h1 class="A text-primary">ADD YOUR NEW PRODUCT</h1>
+                            <h1 class="A text-primary">UPDATE YOUR NEW PRODUCT</h1>
 
                         </div>
                     </div>
@@ -149,15 +149,20 @@ if (isset($_REQUEST["submit_btn"])) {
 
     
 
-    $querys = "UPDATE `products` SET `product_name`='$product_name',`price`='$price',`category`='$category',`image`='$new_name',`description`='$description' WHERE `id`=$_GET[id]";
-
-
-
+  $querys = "UPDATE `products` SET `product_name`='$product_name',`price`='$price',`category`='$category',`image`='$new_name',`description`='$description' WHERE `id`=$_GET[id]";
 
 
     $ress = mysqli_query($db, $querys);
 
-  
+
+    if ($res > 0) {
+        echo "<script>window.location.assign('manage_product.php?msg=Product updated')</script>";
+    } else {
+        echo "<script>window.location.assign('manage_product.php?msg=Product is not updated')</script>";
+    }
+
+
+
 
 }
 

@@ -39,7 +39,7 @@ include("admin_heading.php")?>
 
                             <!-- price -->
                             <input type="number" required class="A w-100 form-control border-0 py-3 mb-4 " min="0" name="price"
-                                placeholder="Enter Your Price" >
+                                placeholder="Enter Your Price" min="0">
 
                             <!--image -->
                             <input type="file" class="A w-100 form-control border-0 py-3 mb-4" name="image"

@@ -59,7 +59,7 @@ include("heading.php");
                                         <div class="fruite-img">
                                             <img src="category_image/<?php 
                                              echo $data['image'];
-                                            ?>" class="img-fluid rounded-top" alt="">
+                                            ?>" class="img-fluid rounded-top" style="height:200px ; width:370px;" alt="" >
                                         </div>
 
                                         <div class='p-4 border border-secondary border-top-0 rounded-bottom'>

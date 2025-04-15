@@ -81,21 +81,38 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="categories.php" class="nav-item nav-link">Categories</a>
                         
-                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                        
+                        
 
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">admin</a>
+                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Category</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="add_category.php" class="dropdown-item">Add Category</a>
                                 <a href="manage_category.php" class="dropdown-item">Manage Category</a>
+                                
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Product</a>
+                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                 <a href="add_product.php" class="dropdown-item">Add Product</a>
                                 <a href="manage_product.php" class="dropdown-item">Manage Product</a>
                                 
+                                
+                                
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Coupon</a>
+                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                               
+                                
                                 <a href="add_coupon.php" class="dropdown-item">Add Coupon</a>
                                 <a href="manage_coupon.php" class="dropdown-item">Manage Coupon</a>
-                                <a href="manage_order.php" class="dropdown-item">Manage Order</a>
+                                
                                 
                             </div>
                         </div>
@@ -103,6 +120,7 @@
                        
                            
                            
+                           <a href='manage_order.php' class='nav-item nav-link'>Orders</a>
                            <a href='Logout.php' class='nav-item nav-link'>Logout</a>
                        
 

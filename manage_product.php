@@ -75,7 +75,7 @@ include("admin_heading.php")?>
 
                     <div class="px-3 py-3 ">
                         <h4><?php echo $data['product_name'] ?></h4>
-                        <p><?php echo $data['description'] ?></p>
+                       
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
                             <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i

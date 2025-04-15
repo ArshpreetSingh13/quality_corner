@@ -44,16 +44,16 @@ include("heading.php") ?>
                 <div class="rounded position-relative fruite-item">
                 <a href="single_product.php?id=<?php echo $data['id']?>&cid=<?php echo $_GET['id']?>">
 
-                    <div class="p-0 fruite-img ">
-                        <img src="images/<?php echo $data['image'] ?>" class="img-fluid  rounded" alt=""
-                            style=" height: 200px ; width: 100%;">
+                    <div class="ps-4 fruite-img ">
+                        <img src="images/<?php echo $data['image'] ?>" class="img-fluid  rounded  " alt=""
+                            style=" height: 200px ; width: 90%; ">
                     </div>
 
 
 
                     <div class="px-3 py-3 ">
                         <h4><?php echo $data['product_name'] ?></h4>
-                        <p><?php echo $data['description'] ?></p>
+                       
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
 
