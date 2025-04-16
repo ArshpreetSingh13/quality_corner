@@ -2,40 +2,87 @@
 
 session_start();
 
-if(!isset($_SESSION["email"])){
+if (!isset($_SESSION["email"])) {
     echo "<script>window.location.assign('admin_login.php?msg=please Login ')</script>";
 }
-include("admin_heading.php")?>
+include("admin_heading.php") ?>
 
 <div class="container-fluid">
-    <div class="row my-5 mx-5 px-5 ">
+
+
+
+    <div class="container">
+        <form action="">
+            <div class="row ps-5 A">
+
+
+
+                <div class="col-xl-3">
+                    <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
+
+                        <label>Sorting:</label>
+                        <select name="sort" class="border-0 form-select-sm bg-light me-3">
+                            <option selected value="0">All</option>
+                            <?php
+
+                            include("config.php");
+                            $pro = "SELECT * FROM  `category` ";
+                            $pro_res = mysqli_query($db, $pro);
+                            while ($cat = mysqli_fetch_assoc($pro_res)) {
+
+                                ?>
+
+                                <option value="<?php echo $cat['id'] ?>"><?php echo $cat['category_name'] ?></option>
+                                <?php
+                            }
+
+
+                            ?>
+
+                        </select>
+
+
+
+                    </div>
+
+                </div>
+                <div class="col-3">
+
+
+                    <button class="btn btn-success text-white mt-2" name="sort_btn">Sort</button>
+
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="row my-0 mx-5 px-5 ">
+
+
+
+
+
 
 
         <?php
-        if (isset($_GET['msg'])) {
-            echo "<div class='alert alert-primary' role='alert'> $_GET[msg]</div>";
-        }
-
-        ?>
 
 
-
-
-        <?php
-
-        include("config.php");
 
         // $query = "SELECT * FROM `products`";
         
 
 
-        if(isset($_GET["id"])){
-            $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id WHERE products.category= $_GET[id]";
-        }
-        else{
+        if ($_REQUEST['sort']!="0"){
+
+            $id = $_REQUEST['sort'];
+            $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id WHERE products.category= '$id'";
+
+        } else {
             $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id ";
         }
-        
+
 
 
         $res = mysqli_query($db, $query);
@@ -65,7 +112,7 @@ include("admin_heading.php")?>
                     <a href="update_product.php?id=<?php echo $data['id']; ?>" class="text-white">
 
                         <button class="btn text-white bg-secondary px-3 py-1 rounded position-absolute"
-                            style="top: 10px; left: 150px;">
+                            style="top: 10px; left: 180px;">
 
                             Update
                         </button>
@@ -75,12 +122,10 @@ include("admin_heading.php")?>
 
                     <div class="px-3 py-3 ">
                         <h4><?php echo $data['product_name'] ?></h4>
-                       
+
                         <div class="d-flex justify-content-between flex-lg-wrap">
                             <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                    class="fa fa-shopping-bag me-2 text-primary"></i> Add to
-                                cart</a>
+
                         </div>
                     </div>
                 </div>
