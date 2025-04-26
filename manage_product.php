@@ -74,7 +74,7 @@ include("admin_heading.php") ?>
         
 
 
-        if ($_REQUEST['sort']!="0"){
+        if (isset($_REQUEST['sort_btn'])){
 
             $id = $_REQUEST['sort'];
             $query = "SELECT products.*, category.category_name FROM `products` INNER JOIN `category` on products.category=category.id WHERE products.category= '$id'";
