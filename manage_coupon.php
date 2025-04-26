@@ -52,10 +52,22 @@ include("admin_heading.php")
             <tr>
                 <td><?php echo $data['code']; ?></td>
                 <td><?php echo $data['discount']; ?></td>
-                <td><?php echo $data['type']; ?></td>
+                <td><?php
+                if ($data['type'] == 1) {
+                    echo ("Flat");
+                } else {
+
+                    echo ("Percentage");
+                }
+                ?></td>
                 <td><?php echo $data['term']; ?></td>
                 <td><?php echo $data['minamt']; ?></td>
-                <td><?php echo $data['status']; ?></td>
+                <td>
+                    <form action="">
+                        <input name="id" type="hidden" value="<?php echo $data['id']; ?>">
+                        <button class="btn btn-primary text-white" name="c_btn">Change status</button><?php echo $data['status']; ?>
+                    </form>
+                </td>
                 <td><a class="btn btn-primary text-white" href="update_coupon.php?id=<?php echo $data['id']; ?>">Update</a></td>
                 <td><a class="btn btn-primary text-white" href="delete_coupon.php?id=<?php echo $data['id']; ?>">Delete</a></td>
             </tr>
@@ -69,4 +81,30 @@ include("admin_heading.php")
 
 <?php
 include("footer.php")
+    ?>
+
+    <?php
+    if(isset($_REQUEST["c_btn"])){
+        $id=$_REQUEST["id"];
+
+        $coup = " SELECT * FROM `coupon` WHERE id='$id'";
+        $coup_res = mysqli_query($db, $coup);
+        $coup_data=mysqli_fetch_assoc($coup_res);
+
+         if($coup_data['status']=="active"){
+           $up_coup=" UPDATE `coupon` SET`status`='deactive' WHERE id='$id'";
+           $up_coup_res=mysqli_query($db,$up_coup);
+           
+         }
+         else{
+            $up_coup = " UPDATE `coupon` SET`status`='active' WHERE id='$id'";
+            $up_coup_res = mysqli_query($db, $up_coup);
+         }
+
+         echo "<script>window.location.assign('manage_coupon.php')</script>";
+
+
+        
+    }
+    
     ?>

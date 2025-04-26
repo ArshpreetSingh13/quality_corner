@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION["email"])) {
+    echo "<script>window.location.assign('login.php?msg=please Login ')</script>";
+    
+}
 include("heading.php");
 ?>
 <!-- Single Page Header End -->
@@ -151,7 +155,15 @@ include("heading.php");
                             <div class="d-flex justify-content-between mb-4">
                                 <h5 class="mb-0 me-4">Type of Discount</h5>
                                 <div class="">
-                                    <p class="mb-0 text-end"><?php echo $coupon_data['type'] ?></p>
+                                    <p class="mb-0 text-end"><?php 
+                                     if($coupon_data['type']==1){
+                                        echo("Flat");
+                                    } 
+                                    else{
+                                        
+                                        echo("Percentage");
+                                     }
+                                     ?></p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mb-4">
@@ -213,7 +225,7 @@ include("heading.php");
 
 
                         <div class="d-flex justify-content-between">
-                            <h5 class="mb-0 me-4">Shipping</h5>
+                            <h5 class="mb-0 me-4">Packing Charges</h5>
                             <div class="">
                                 <p class="mb-0 text-end">&#8377;<?php
                                 if ($total >= 500) {
