@@ -12,11 +12,10 @@ include("heading.php")
 
 <!-- Single Page Header start -->
 <div class="container-fluid page-header py-5 A">
-    <h1 class="text-center text-white display-6">Shop</h1>
+    <h1 class="text-center text-white display-6">Quality Corner</h1>
     <ol class="breadcrumb justify-content-center mb-0">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active text-white">Coupon</li>
+        <li class="breadcrumb-item active text-white">Order History</li>
     </ol>
 </div>
 
@@ -24,7 +23,7 @@ include("heading.php")
 
 
 
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover B">
         <tr>
             <th>Order Date</th>
             <th>User </th>
@@ -34,7 +33,7 @@ include("heading.php")
             <th>View</th>
 
         </tr>
-        <div class="row">
+        <div class="row B">
             <form action="">
                 <div class="col-xl-3">
                     <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">

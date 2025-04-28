@@ -58,14 +58,14 @@
             
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
-                            class="text-white">123 Street, New York</a></small>
+                            class="text-white"> 102 Quality Corner, Sarai Khas, Kartarpur</a></small>
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-white">arshpreetsingh1327@gmail.com</a></small>
+                            class="text-white">qualitycorner@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
+                    <a href="./pdf/Privacy Policy.pdf" download  class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                    <a href="./pdf/Terms.pdf" download  class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                    <a href="contect.php" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
                 </div>
             </div>
         </div>
@@ -109,9 +109,18 @@
                             <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Coupon</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                
-                                
                                 <a href="add_coupon.php" class="dropdown-item">Add Coupon</a>
                                 <a href="manage_coupon.php" class="dropdown-item">Manage Coupon</a>
+                               
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">More...</a>
+                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                               
+                                
+                                 <a href="Requsts.php" class="dropdown-item">Requsts</a>
+                                <a href="manage_order.php" class="dropdown-item">Orders</a>
                                 
                                 
                             </div>
@@ -119,8 +128,8 @@
 
                        
                            
+                       
                            
-                           <a href='manage_order.php' class='nav-item nav-link'>Orders</a>
                            <a href='Logout.php' class='nav-item nav-link'>Logout</a>
                        
 

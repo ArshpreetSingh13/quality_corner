@@ -10,14 +10,7 @@ include("admin_heading.php")?>
 
 
 <!-- Single Page Header start -->
-<div class="container-fluid page-header py-5 A">
-    <h1 class="text-center text-white display-6">Shop</h1>
-    <ol class="breadcrumb justify-content-center mb-0">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Pages</a></li>
-        <li class="breadcrumb-item active text-white">Category</li>
-    </ol>
-</div>
+
 <!-- Single Page Header End -->
 
 
@@ -28,13 +21,7 @@ include("admin_heading.php")?>
         <div class="row g-4">
             <div class="col-lg-12">
                 <div class="row g-4 B">
-                    <div class="col-xl-3">
-                        <div class="input-group w-100 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords"
-                                aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
-                        </div>
-                    </div>
+                   
                     <div class="col-6"></div>
                     
                 </div>

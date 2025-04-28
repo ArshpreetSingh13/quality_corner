@@ -3,13 +3,13 @@
     <div class="container  py-5">
         <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
             <div class="row g-4">
-                <div class="col-lg-3">
+                <div class="col-lg-4">
                     <a href="#">
-                        <h1 class="text-primary mb-0">Fruitables</h1>
-                        <p class="text-secondary mb-0">Fresh products</p>
+                        <h1 class="text-primary mb-0">Quality Corner</h1>
+                        <p class="text-secondary mb-0">100% Orignal Products</p>
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="position-relative mx-auto">
                         <input class="form-control border-0 w-100 py-3 px-4 rounded-pill" type="number"
                             placeholder="Your Email">
@@ -36,39 +36,38 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">Why People Like us!</h4>
-                    <p class="mb-4">typesetting, remaining essentially unchanged. It was
-                        popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
-                    <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                    <p class="mb-4">At Quality Corner, we offer the freshest products, unbeatable prices, and friendly service you can trust. We make grocery shopping easy, fast, and enjoyable — because you deserve the best every day!</p>
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="d-flex flex-column text-start footer-item">
-                    <h4 class="text-light mb-3">Shop Info</h4>
-                    <a class="btn-link" href="">About Us</a>
-                    <a class="btn-link" href="">Contact Us</a>
-                    <a class="btn-link" href="">Privacy Policy</a>
-                    <a class="btn-link" href="">Terms & Condition</a>
-                    <a class="btn-link" href="">Return Policy</a>
-                    <a class="btn-link" href="">FAQs & Help</a>
+                    <h4 class="text-warning mb-3">Shop Info</h4>
+
+                    <a class="btn-link" href="contact.php">Contact Us</a>
+                    <a class="btn-link" href="./pdf/Privacy Policy.pdf" download>Privacy Policy</a>
+                    <a class="btn-link" href="./pdf/Terms.pdf" download>Terms & Condition</a>
+                    
+                    <a class="btn-link" href="Contact.php">FAQs & Help</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="d-flex flex-column text-start footer-item">
                     <h4 class="text-light mb-3">Account</h4>
-                    <a class="btn-link" href="">My Account</a>
-                    <a class="btn-link" href="">Shop details</a>
-                    <a class="btn-link" href="">Shopping Cart</a>
-                    <a class="btn-link" href="">Wishlist</a>
-                    <a class="btn-link" href="">Order History</a>
-                    <a class="btn-link" href="">International Orders</a>
+                    
+                    <a class="btn-link" href="contact.php">Shop details</a>
+                    <a class="btn-link" href="cart.php">Shopping Cart</a>
+                    
+                    <a class="btn-link" href="order_history.php">Order History</a>
+                    
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">Contact</h4>
-                    <p>Address: 1429 Netus Rd, NY 48247</p>
-                    <p>Email: Example@gmail.com</p>
-                    <p>Phone: +0123 4567 8910</p>
+                    <p>Address: 102 Quality Corner, Sarai Khas, Kartarpur</p>
+                    <p>Email: qualitycorner.com</p>
+                    <p>Phone: 9501154841</p>
                     <p>Payment Accepted</p>
                     <img src="img/payment.png" class="img-fluid" alt="">
                 </div>
@@ -78,20 +77,19 @@
 </div>
 <!-- Footer End -->
 
-<!-- Copyright Start -->
 <div class="container-fluid copyright bg-dark py-4">
     <div class="container">
+    
         <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>,
+                <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Quality Corner</a>,
                     All right reserved.</span>
             </div>
             <div class="col-md-6 my-auto text-center text-md-end text-white">
                 <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                 <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                 <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                    class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                Designed By <span class="border-bottom text-primary" href="#">Arshpreet Singh</span>
             </div>
         </div>
     </div>

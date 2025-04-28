@@ -10,7 +10,7 @@ if (!isset($_SESSION["email"])) {
 include("admin_heading.php");
 ?>
 <div class="container-fluid py-5">
-    <div class="container">
+    <div class="container A">
         <div class="bg-light B p-5 rounded">
             <div class="row  g-4 justify-content-center">
 

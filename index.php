@@ -7,7 +7,7 @@ include("heading.php")
 
 
 <!-- Hero Start -->
-<div class="container-fluid py-5 mb-5 hero-header">
+<div class="container-fluid py-5 mb-5 hero-header mt-0">
     <div class=" A container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">
@@ -48,7 +48,7 @@ include("heading.php")
 
 
 <!-- Featurs Section Start -->
-<div class=" B container-fluid featurs py-5">
+<div class=" B container-fluid featurs ">
     <div class="container py-5">
         <div class="row ">
 
@@ -109,7 +109,7 @@ include("heading.php")
 </div>
 <!-- Featurs Section End -->
 
-<div class="  container-fluid vesitable B py-5">
+<div class="  container-fluid vesitable B pb-2">
     <div class=" container py-5">
         <h1 class="mb-0">Fresh Organic Vegetables</h1>
         <div class="owl-carousel vegetable-carousel justify-content-center">
@@ -170,27 +170,27 @@ include("heading.php")
         <div class="bg-light B p-5 rounded">
             <div class="row  g-4 justify-content-center">
 
-            <?php 
-            $user="SELECT count(*) as total FROM `user` ";
-            $user_res=mysqli_query($db,$user);
-            $user_data=mysqli_fetch_assoc($user_res);
+                <?php
+                $user = "SELECT count(*) as total FROM `user` ";
+                $user_res = mysqli_query($db, $user);
+                $user_data = mysqli_fetch_assoc($user_res);
 
-            ?>
-            <?php 
-            $pro="SELECT count(*) as totalP FROM `products` ";
-            $pro_res=mysqli_query($db,$pro);
-            $pro_data=mysqli_fetch_assoc($pro_res);
+                ?>
+                <?php
+                $pro = "SELECT count(*) as totalP FROM `products` ";
+                $pro_res = mysqli_query($db, $pro);
+                $pro_data = mysqli_fetch_assoc($pro_res);
 
-            ?>
+                ?>
 
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="counter bg-white rounded p-5">
                         <i class="fa fa-users text-secondary"></i>
                         <h4>satisfied customers</h4>
-                        <h1><?php echo $user_data['total']?></h1>
+                        <h1><?php echo $user_data['total'] ?></h1>
                     </div>
                 </div>
-               
+
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="counter bg-white rounded p-5">
                         <i class="fa fa-users text-secondary"></i>
@@ -213,93 +213,53 @@ include("heading.php")
             <h1 class="display-5 mb-5 text-dark">Our Client Saying!</h1>
         </div>
         <div class="C owl-carousel testimonial-carousel">
-            <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                <div class="position-relative">
-                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                        style="bottom: 30px; right: 0;"></i>
-                    <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                            industry's
-                            standard dummy text ever since the 1500s,
-                        </p>
-                    </div>
-                    <div class="d-flex align-items-center flex-nowrap">
-                        <div class="bg-secondary rounded">
-                            <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                style="width: 100px; height: 100px;" alt="">
-                        </div>
-                        <div class="ms-4 d-block">
-                            <h4 class="text-dark">Client Name</h4>
-                            <p class="m-0 pb-3">Profession</p>
-                            <div class="d-flex pe-5">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star"></i>
+
+            <?php
+
+
+            $rew = "SELECT * FROM `review`  ";
+
+            $rew_res = mysqli_query($db, $rew);
+
+            while ($rew_data = mysqli_fetch_assoc($rew_res)) {
+
+                $pd = $rew_data['product_id'];
+                $cate = "SELECT * FROM `products` WHERE id='$pd'";
+                $cate_res = mysqli_query($db, $cate);
+                $cate_data = mysqli_fetch_assoc($cate_res);
+
+                ?>
+                <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                    
+
+                    <a href="single_product.php?id=<?php echo $rew_data['product_id'] ?>&cid=<?php echo $cate_data['category'] ?>">
+                        <div class="position-relative">
+                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
+                                style="bottom: 30px; right: 0;"></i>
+                            <div class="mb-4 pb-4 border-bottom border-secondary">
+                                <p class="mb-0"><?php echo $rew_data['reviews'] ?>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center flex-nowrap">
+                                <div class="bg-secondary rounded">
+                                    <img src="images/<?php echo $cate_data['image'] ?>" class="img-fluid rounded" style="width: 100px; height: 100px;"
+                                        alt="">
+                                </div>
+                                <div class="ms-4 d-block">
+                                    <h4 class="text-dark"><?php echo $rew_data['Name'] ?></h4>
+                                    <p class="m-0 pb-3"><?php echo $rew_data['email'] ?></p>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    </a>
                 </div>
-            </div>
-            <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                <div class="position-relative">
-                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                        style="bottom: 30px; right: 0;"></i>
-                    <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                            industry's
-                            standard dummy text ever since the 1500s,
-                        </p>
-                    </div>
-                    <div class="d-flex align-items-center flex-nowrap">
-                        <div class="bg-secondary rounded">
-                            <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                style="width: 100px; height: 100px;" alt="">
-                        </div>
-                        <div class="ms-4 d-block">
-                            <h4 class="text-dark">Client Name</h4>
-                            <p class="m-0 pb-3">Profession</p>
-                            <div class="d-flex pe-5">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                <div class="position-relative">
-                    <i class="fa fa-quote-right fa-2x text-secondary position-absolute"
-                        style="bottom: 30px; right: 0;"></i>
-                    <div class="mb-4 pb-4 border-bottom border-secondary">
-                        <p class="mb-0">Lorem Ipsum is simply dummy text of the printing Ipsum has been the
-                            industry's
-                            standard dummy text ever since the 1500s,
-                        </p>
-                    </div>
-                    <div class="d-flex align-items-center flex-nowrap">
-                        <div class="bg-secondary rounded">
-                            <img src="img/testimonial-1.jpg" class="img-fluid rounded"
-                                style="width: 100px; height: 100px;" alt="">
-                        </div>
-                        <div class="ms-4 d-block">
-                            <h4 class="text-dark">Client Name</h4>
-                            <p class="m-0 pb-3">Profession</p>
-                            <div class="d-flex pe-5">
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                                <i class="fas fa-star text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
+
+
         </div>
     </div>
 </div>

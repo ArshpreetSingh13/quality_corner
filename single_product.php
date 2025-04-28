@@ -51,7 +51,7 @@ include("heading.php");
                             <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
 
                             <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
-                            
+
                             <button class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary"
                                 name="submit_btn"><i class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
                                 cart</button>
@@ -75,35 +75,41 @@ include("heading.php");
 
                             </div>
                             <div class="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                                <div class="d-flex">
+
+
+
+                                <?php
+                                $pp_id = $_REQUEST["id"];
+
+                                $rew = "SELECT * FROM `review` WHERE product_id='$pp_id'";
+                                
+                                $rew_res = mysqli_query($db, $rew);
+                                while ($rew_data = mysqli_fetch_assoc($rew_res)) {
+                                    ?>
+                                     <div class="d-flex">
+                               
                                     <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3"
                                         style="width: 100px; height: 100px;" alt="">
                                     <div class="">
-                                        <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
+                                        <p class="mb-2" style="font-size: 14px;"><?php echo $rew_data['created at'] ?></p>
                                         <div class="d-flex justify-content-between">
-                                            <h5>Jason Smith</h5>
+                                            <h5><?php echo $rew_data['Name'] ?></h5>
 
                                         </div>
-                                        <p>The generated Lorem Ipsum is therefore always free from repetition
-                                            injected
-                                            humour, or non-characteristic
-                                            words etc. Susp endisse ultricies nisi vel quam suscipit </p>
+                                        <p><?php echo $rew_data['reviews'] ?> </p>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3"
-                                        style="width: 100px; height: 100px;" alt="">
-                                    <div class="">
-                                        <p class="mb-2" style="font-size: 14px;">April 12, 2024</p>
-                                        <div class="d-flex justify-content-between">
-                                            <h5>Sam Peters</h5>
 
-                                        </div>
-                                        <p class="text-dark">The generated Lorem Ipsum is therefore always free from
-                                            repetition injected humour, or non-characteristic
-                                            words etc. Susp endisse ultricies nisi vel quam suscipit </p>
-                                    </div>
-                                </div>
+                                
+                                    <?php
+                                }
+                                ?>
+                               
+
+
+
+                               
+                               
                             </div>
                             <div class="tab-pane" id="nav-vision" role="tabpanel">
                                 <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
@@ -116,39 +122,32 @@ include("heading.php");
                             </div>
                         </div>
                     </div>
-                    <form action="#">
+                    <form action="thankyou.php" method="post">
+                        
                         <h4 class="mb-5 fw-bold">Leave a Reply</h4>
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="border-bottom rounded">
-                                    <input type="text" class="form-control border-0 me-4" placeholder="Yur Name *">
+                                    <input type="text" class="form-control border-0 me-4" placeholder="Your Name *" name="name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="border-bottom rounded">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email *">
+                                    <input type="email" class="form-control border-0" placeholder="Your Email *" name="email" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="border-bottom rounded my-4">
-                                    <textarea name="" id="" class="form-control border-0" cols="30" rows="8"
-                                        placeholder="Your Review *" spellcheck="false"></textarea>
+                                    <textarea  class="form-control border-0" cols="30" rows="8"
+                                        placeholder="Your Review *" spellcheck="false" name="reviews"></textarea required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="d-flex justify-content-between py-3 mb-5">
-                                    <div class="d-flex align-items-center">
-                                        <p class="mb-0 me-3">Please rate:</p>
-                                        <div class="d-flex align-items-center" style="font-size: 12px;">
-                                            <i class="fa fa-star text-muted"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn border border-secondary text-primary rounded-pill px-4 py-3">
-                                        Post Comment</a>
+                                    <input type="hidden" name="p_id" value="<?php echo $Pdata['id'] ?>" >
+
+                                    
+                                        <button class=" btn border border-secondary text-primary rounded-pill px-4 py-3">Post Comment</button>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +162,7 @@ include("heading.php");
                 <?php
                 $cid = $_GET['cid'];
                 $query = "SELECT products.* ,category.category_name FROM `products` INNER JOIN `category` ON products.category= category.id WHERE products.category='$cid'";
-               
+
                 $res = mysqli_query($db, $query);
                 while ($data = mysqli_fetch_assoc($res)) {
 
@@ -171,34 +170,36 @@ include("heading.php");
 
                     <div class="border border-primary rounded position-relative vesitable-item">
 
-                        <a href="single_product.php?id=<?php echo $data['id']?>&cid=<?php echo $cid ?>">
+                        <a href="single_product.php?id=<?php echo $data['id'] ?>&cid=<?php echo $cid ?>">
                             <div class="vesitable-img">
-                            <img src="images/<?php echo $data['image'] ?>" class="img-fluid w-100 rounded-top" alt="">
+                                <img src="images/<?php echo $data['image'] ?>" class="img-fluid w-100 rounded-top" alt="">
                             </div>
-                            
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">
+
+                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                style="top: 10px; right: 10px;">
                                 <?php echo $data['category_name'] ?>
                             </div>
-                            
+
                             <div class="p-4 pb-0 rounded-bottom">
                                 <h4><?php echo $data['product_name'] ?></h4>
                                 <p><?php echo $data['description'] ?></p>
                                 <div class="d-flex justify-content-between flex-lg-wrap">
                                     <p class="text-dark fs-5 fw-bold">&#8377;<?php echo $data['price'] ?></p>
-                            
-                            
+
+
                                     <form>
-                                        
+
                                         <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
 
                                         <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
-                            
+
                                         <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
-                            
+
                                         <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
-                            
-                                        <button class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary" name="submit_btn"><i
-                                                class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
+
+                                        <button
+                                            class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary"
+                                            name="submit_btn"><i class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
                                             cart</button>
                                     </form>
                                 </div>
@@ -237,7 +238,7 @@ if (isset($_REQUEST['submit_btn'])) {
     $email = $_SESSION['email'];
     $pid = $_REQUEST['pid'];
     $pageid = $_REQUEST['pageid'];
-    $cid=$_REQUEST['cid'];
+    $cid = $_REQUEST['cid'];
     echo $cid;
 
     $cart = "SELECT * FROM `cart` WHERE `name` = '$email' and `product`=$pid";

@@ -30,6 +30,32 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/add.css" rel="stylesheet">
+    <style>
+    .thank-you-card {
+      max-width: 500px;
+      margin: 100px auto;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-top: 5px solid #198754; /* Bootstrap's success green */
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+    .thank-you-icon {
+      font-size: 60px;
+      color: #198754;
+      margin-bottom: 20px;
+    }
+    .btn-custom {
+      margin-top: 20px;
+      color: #198754;
+      border-color: #198754;
+    }
+    .btn-custom:hover {
+      background-color: #198754;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,14 +83,14 @@
 
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
-                            class="text-white">123 Street, New York</a></small>
+                            class="text-white"> 102 Quality Corner, Sarai Khas, Kartarpur</a></small>
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-white">arshpreetsingh1327@gmail.com</a></small>
+                            class="text-white">qualitycorner@gmail.com</a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
+                    <a href="./pdf/Privacy Policy.pdf" download class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                    <a href="./pdf/Terms.pdf" download class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                    <a href="contact.php" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
                 </div>
             </div>
         </div>
@@ -92,7 +118,15 @@
 
                             echo " <a href='Logout.php' class='nav-item nav-link'>Logout</a>";
                         } else {
-                            echo "<a href='admin_login.php' class='nav-item nav-link'>Admin Login</a>";
+                            echo "<div class='nav-item dropdown'>
+                            <a href='#' class='nav-link dropdown-toggle 'data-bs-toggle='dropdown'>Login</a>
+                            <div class='dropdown-menu m-0 bg-secondary rounded-0'>
+                                <a href='admin_login.php' class='dropdown-item'>Admin login</a>
+                                <a href='login.php' class='dropdown-item'>Login</a>
+                                
+                            </div>
+                        </div>";
+                            
                         }
 
                         ?>
