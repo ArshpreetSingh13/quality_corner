@@ -151,7 +151,7 @@ include("admin_heading.php")
 
                 ?>
 
-                    <a class="btn btn-danger text-white mt-2" href="?id=<?php echo $data['id']; ?>">Decline</a></< /td>
+                    <a class="btn btn-danger text-white mt-2" href="decline.php?id=<?php echo $data['id']; ?>">Decline</a></< /td>
             </tr>
             <?php
         }

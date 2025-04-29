@@ -70,7 +70,7 @@
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="index.php" class="nav-item nav-link">Home</a>
+                        <a href="dashboard.php" class="nav-item nav-link">Home</a>
                         
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Category</a>

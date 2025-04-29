@@ -235,7 +235,7 @@ include("heading.php");
                                 } else {
                                     $shipping = 50;
                                     $grand_total = $total + $shipping;
-                                    echo "50<br><div class='text-success text-decoration-underline'>Free Shipping on order above Rs.500</div>";
+                                    echo "50<br><div class='text-success text-decoration-underline'>Free Packaging on order above Rs.500</div>";
                                 }
                                 ?></p>
                             </div>
