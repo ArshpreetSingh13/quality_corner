@@ -42,45 +42,53 @@ include("heading.php") ?>
             ?>
             <div class="col-md-6 A col-lg-4 col-xl-3 p-0 border border-secondary rounded my-5 ms-5 me-4">
                 <div class="rounded position-relative fruite-item">
-                <a href="single_product.php?id=<?php echo $data['id']?>&cid=<?php echo $_GET['id']?>">
+                    <a href="single_product.php?id=<?php echo $data['id'] ?>&cid=<?php echo $_GET['id'] ?>">
 
-                    <div class="ps-4 fruite-img ">
-                        <img src="images/<?php echo $data['image'] ?>" class="img-fluid  rounded  " alt=""
-                            style=" height: 200px ; width: 90%; ">
-                    </div>
-
-
-
-                    <div class="px-3 py-3 ">
-                        <h4><?php echo $data['product_name'] ?></h4>
-                       
-                        <div class="d-flex justify-content-between flex-lg-wrap">
-                            <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
-
-
-
-                            <form>
-
-
-                                <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
-
-                                <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
-
-                                <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
-
-
-                                <button class="btn border border-secondary rounded-pill px-3 text-primary"
-                                    name="submit_btn">
-
-                                    <i class="fa fa-shopping-bag me-2 text-primary "></i>
-                                    Add to
-                                    cart
-
-                                </button>
-                            </form>
+                        <div class="ps-4 fruite-img ">
+                            <img src="images/<?php echo $data['image'] ?>" class="img-fluid  rounded  " alt=""
+                                style=" height: 200px ; width: 90%; ">
                         </div>
-                        
-                    </div>
+
+
+
+                        <div class="px-3 py-3 ">
+                            <h4><?php echo $data['product_name'] ?></h4>
+
+                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                <p class="text-dark fs-5 fw-bold mb-0">₹<?php echo $data['price'] ?></p>
+
+
+
+                                <form>
+
+
+                                    <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
+
+                                    <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
+
+                                    <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
+
+
+                                    <?php
+                                    if(isset($_SESSION["email"]))
+                                    {
+                                    ?>
+
+                                    <button class="btn border border-secondary rounded-pill px-3 text-primary"
+                                        name="submit_btn">
+
+                                        <i class="fa fa-shopping-bag me-2 text-primary "></i>
+                                        Add to
+                                        cart
+
+                                    </button>
+                                    <?php
+                                    }
+                                    ?>
+                                </form>
+                            </div>
+
+                        </div>
                     </a>
                 </div>
 

@@ -43,18 +43,24 @@ include("heading.php");
 
 
 
-                        <form>
-                            <input type="hidden" value="<?php echo $Pdata['id'] ?>" name="pid">
 
-                            <input type="hidden" value="<?php echo $Pdata['price'] ?>" name="price">
+                        <input type="hidden" value="<?php echo $Pdata['id'] ?>" name="pid">
 
-                            <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
+                        <input type="hidden" value="<?php echo $Pdata['price'] ?>" name="price">
 
-                            <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
+                        <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
 
+                        <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
+
+                        <?php
+                        if (isset($_SESSION["email"])) {
+                            ?>
                             <button class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary"
                                 name="submit_btn"><i class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
                                 cart</button>
+                            <?php
+                        }
+                        ?>
                         </form>
                     </div>
                     <div class="col-lg-12">
@@ -82,34 +88,35 @@ include("heading.php");
                                 $pp_id = $_REQUEST["id"];
 
                                 $rew = "SELECT * FROM `review` WHERE product_id='$pp_id'";
-                                
+
                                 $rew_res = mysqli_query($db, $rew);
                                 while ($rew_data = mysqli_fetch_assoc($rew_res)) {
                                     ?>
-                                     <div class="d-flex">
-                               
-                                    <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3"
-                                        style="width: 100px; height: 100px;" alt="">
-                                    <div class="">
-                                        <p class="mb-2" style="font-size: 14px;"><?php echo $rew_data['created at'] ?></p>
-                                        <div class="d-flex justify-content-between">
-                                            <h5><?php echo $rew_data['Name'] ?></h5>
+                                    <div class="d-flex">
 
+                                        <img src="img/avatar.jpg" class="img-fluid rounded-circle p-3"
+                                            style="width: 100px; height: 100px;" alt="">
+                                        <div class="">
+                                            <p class="mb-2" style="font-size: 14px;"><?php echo $rew_data['created at'] ?>
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <h5><?php echo $rew_data['Name'] ?></h5>
+
+                                            </div>
+                                            <p><?php echo $rew_data['reviews'] ?> </p>
                                         </div>
-                                        <p><?php echo $rew_data['reviews'] ?> </p>
                                     </div>
-                                </div>
 
-                                
+
                                     <?php
                                 }
                                 ?>
-                               
 
 
 
-                               
-                               
+
+
+
                             </div>
                             <div class="tab-pane" id="nav-vision" role="tabpanel">
                                 <p class="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et
@@ -123,22 +130,24 @@ include("heading.php");
                         </div>
                     </div>
                     <form action="thankyou.php" method="post">
-                        
+
                         <h4 class="mb-5 fw-bold">Leave a Reply</h4>
                         <div class="row g-4">
                             <div class="col-lg-6">
                                 <div class="border-bottom rounded">
-                                    <input type="text" class="form-control border-0 me-4" placeholder="Your Name *" name="name" required>
+                                    <input type="text" class="form-control border-0 me-4" placeholder="Your Name *"
+                                        name="name" required>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="border-bottom rounded">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email *" name="email" required>
+                                    <input type="email" class="form-control border-0" placeholder="Your Email *"
+                                        name="email" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="border-bottom rounded my-4">
-                                    <textarea  class="form-control border-0" cols="30" rows="8"
+                                    <textarea class="form-control border-0" cols="30" rows="8"
                                         placeholder="Your Review *" spellcheck="false" name="reviews"></textarea required>
                                 </div>
                             </div>
@@ -168,46 +177,55 @@ include("heading.php");
 
                     ?>
 
-                    <div class="border border-primary rounded position-relative vesitable-item">
+                                    <div class="border  border-primary rounded position-relative vesitable-item" style="height: 550px;">
 
-                        <a href="single_product.php?id=<?php echo $data['id'] ?>&cid=<?php echo $cid ?>">
-                            <div class="vesitable-img">
-                                <img src="images/<?php echo $data['image'] ?>" class="img-fluid w-100 rounded-top" alt="">
-                            </div>
+                                        <a href="single_product.php?id=<?php echo $data['id'] ?>&cid=<?php echo $cid ?>">
+                                            <div class="vesitable-img">
+                                                <img src="images/<?php echo $data['image'] ?>" class="img-fluid w-100 rounded-top" alt="">
+                                            </div>
 
-                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                style="top: 10px; right: 10px;">
-                                <?php echo $data['category_name'] ?>
-                            </div>
+                                            <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
+                                                style="top: 10px; right: 10px;">
+                                                <?php echo $data['category_name'] ?>
+                                            </div>
 
-                            <div class="p-4 pb-0 rounded-bottom">
-                                <h4><?php echo $data['product_name'] ?></h4>
-                                <p><?php echo $data['description'] ?></p>
-                                <div class="d-flex justify-content-between flex-lg-wrap">
-                                    <p class="text-dark fs-5 fw-bold">&#8377;<?php echo $data['price'] ?></p>
+                                            <div class="p-4 pb-0 rounded-bottom">
+                                                <h4><?php echo $data['product_name'] ?></h4>
+
+                                                <p>
+                                                    <?php
+                                                    $words = explode(" ", $data['description']);
+                                                    $short_desc = implode(" ", array_slice($words, 0, 10));
+                                                    echo $short_desc . '...';
+                                                    ?>
+                                                </p>
+
+                                                <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    
+                                                    <p class="text-dark fs-5 fw-bold">&#8377;<?php echo $data['price'] ?></p>
 
 
-                                    <form>
+                                                    <form>
 
-                                        <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
+                                                        <input type="hidden" value="<?php echo $data['id'] ?>" name="pid">
 
-                                        <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
+                                                        <input type="hidden" value="<?php echo $_GET['cid'] ?>" name="cid">
 
-                                        <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
+                                                        <input type="hidden" value="<?php echo $data['price'] ?>" name="price">
 
-                                        <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
+                                                        <input type="hidden" value="<?php echo $_GET['id'] ?>" name="pageid">
 
-                                        <button
-                                            class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary"
-                                            name="submit_btn"><i class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
-                                            cart</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                                                        <button
+                                                            class="btn border border-secondary   rounded-pill px-3 py-1 mb-4 text-primary"
+                                                            name="submit_btn"><i class="fa fa-shopping-bag  me-2 text-primary"></i> Add to
+                                                            cart</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
 
-                    <?php
+                                    <?php
                 }
                 ?>
 

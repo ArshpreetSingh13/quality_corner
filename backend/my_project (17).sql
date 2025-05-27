@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2025 at 07:17 PM
+-- Generation Time: May 23, 2025 at 06:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -67,7 +67,8 @@ INSERT INTO `cart` (`id`, `name`, `product`, `quantity`, `price`, `status`, `cre
 (77, 'adminmgkc@gmail.com', '5', 3, 50, 'active', '2025-03-27 14:24:27'),
 (78, 'adminmgkc@gmail.com', '2', 2, 300, 'active', '2025-03-27 14:24:28'),
 (91, '', '5', 1, 50, 'active', '2025-04-03 07:25:02'),
-(92, '', '6', 1, 50, 'active', '2025-04-03 07:25:32');
+(92, '', '6', 1, 50, 'active', '2025-04-03 07:25:32'),
+(108, 'arsh@gmail.com', '37', 2, 27, 'active', '2025-04-28 05:07:16');
 
 -- --------------------------------------------------------
 
@@ -100,6 +101,28 @@ INSERT INTO `category` (`id`, `category_name`, `image`, `status`, `created at`) 
 (16, 'Ghee', '2048244674-istockphoto-1187181045-612x612.jpg', 'active', '2025-04-13 16:09:14'),
 (17, 'Dry Fruits', '987988821-dry.jpg', 'active', '2025-04-13 16:23:11'),
 (18, 'Hair Care', '933474928-Haircare-products.jpg', 'active', '2025-04-13 16:47:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contectus`
+--
+
+CREATE TABLE `contectus` (
+  `id` int(5) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `text` longtext NOT NULL,
+  `status` varchar(50) NOT NULL DEFAULT 'active',
+  `created at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contectus`
+--
+
+INSERT INTO `contectus` (`id`, `name`, `email`, `text`, `status`, `created at`) VALUES
+(1, 'Arshpreet Singh M-10', 'arshpreet1327@gmail.com', 'done', 'active', '2025-04-27 10:31:04');
 
 -- --------------------------------------------------------
 
@@ -164,10 +187,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user`, `total`, `coupon_id`, `address`, `status`, `created at`) VALUES
-(5, 'arsh@gmail.com', 550, 111, ' ', 'pending', '2025-04-05 15:01:26'),
-(6, 'arsh@gmail.com', 300, 110, ' ', 'pending', '2025-04-05 15:02:05'),
+(5, 'arsh@gmail.com', 550, 111, ' ', 'Approved', '2025-04-05 15:01:26'),
+(6, 'arsh@gmail.com', 300, 110, ' ', 'Packed', '2025-04-05 15:02:05'),
 (7, 'tania@gmail.com', 650, 0, ' ', 'pending', '2025-04-05 15:02:57'),
-(8, 'tania@gmail.com', 300, 110, ' ', 'Packed', '2025-04-05 15:15:07'),
 (9, 'tania@gmail.com', 100, 0, ' ', 'pending', '2025-04-05 15:23:24'),
 (10, 'tania@gmail.com', 325, 110, ' ', 'pending', '2025-04-08 15:40:53');
 
@@ -200,7 +222,8 @@ INSERT INTO `order_details` (`id`, `order_id`, `product`, `quantity`, `price`, `
 (20, 8, '2', 2, 600, 'active', '2025-04-05 15:15:07'),
 (21, 9, '5', 1, 50, 'active', '2025-04-05 15:23:24'),
 (22, 10, '5', 1, 50, 'active', '2025-04-08 15:40:53'),
-(23, 10, '2', 2, 600, 'active', '2025-04-08 15:40:53');
+(23, 10, '2', 2, 600, 'active', '2025-04-08 15:40:53'),
+(24, 11, '40', 1, 33, 'active', '2025-04-28 04:02:48');
 
 -- --------------------------------------------------------
 
@@ -300,6 +323,32 @@ INSERT INTO `products` (`id`, `product_name`, `price`, `category`, `image`, `des
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `product_id` varchar(50) NOT NULL,
+  `reviews` longtext NOT NULL,
+  `status` varchar(50) NOT NULL DEFAULT 'active',
+  `created at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `Name`, `email`, `product_id`, `reviews`, `status`, `created at`) VALUES
+(2, 'Arshpreet singh ', 'arsh@gmail.com', '11', 'Very Good Product', 'active', '2025-04-26 14:47:47'),
+(3, 'Tania', 'tania@gmail.com', '18', 'Very Sweet', 'active', '2025-04-26 14:48:45'),
+(4, 'Gursharanpreet kaur', 'gursharanpreetkaur@gmail.com', '26', 'Juicy And Refreshing', 'active', '2025-04-26 15:04:50'),
+(20, 'Sahil', 'sahil@gmail.com', '25', 'Best Price', 'active', '2025-04-27 06:36:37');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -351,6 +400,12 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `contectus`
+--
+ALTER TABLE `contectus`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `coupon`
 --
 ALTER TABLE `coupon`
@@ -382,6 +437,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -402,13 +463,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `contectus`
+--
+ALTER TABLE `contectus`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `coupon`
@@ -426,19 +493,25 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`

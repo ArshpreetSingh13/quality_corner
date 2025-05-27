@@ -40,7 +40,7 @@ include("admin_heading.php")
                                 placeholder="Enter Code">
 
                             <input type="number" required class="A w-100 form-control border-0 py-3 mb-4 "
-                                name="discount" placeholder="Enter Discount">
+                                name="discount" placeholder="Enter Discount" min="0">
                             <!-- 
                                 <p>Enter Your Discount Type</p>                                
                                 <label for="flat">flat</label>
@@ -60,8 +60,8 @@ include("admin_heading.php")
                             <input type="text" required class="A w-100 form-control border-0 py-3 mb-4 " name="term"
                                 placeholder="Enter terms and condition">
 
-                            <input type="text" required class="A w-100 form-control border-0 py-3 mb-4 " name="minamt"
-                                placeholder="Enter Minimum Amount">
+                            <input type="number" required class="A w-100 form-control border-0 py-3 mb-4 " name="minamt"
+                                placeholder="Enter Minimum Amount" min="0">
 
 
 

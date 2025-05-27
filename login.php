@@ -67,7 +67,7 @@ if(isset($_REQUEST['submit_btn'])){
     $email=$_REQUEST["email"];
     $password=md5($_REQUEST["password"]);
 include("config.php");
-$query="SELECT * from `user` where `email`='$email' and `password`='$password'";
+echo $query="SELECT * from `user` where `email`='$email' and `password`='$password'";
 
 $res=mysqli_query($db,$query);
 
@@ -78,7 +78,7 @@ $res=mysqli_query($db,$query);
         $_SESSION["email"]=$email;
         $_SESSION["password"]=$password;
 
-        echo "<script>window.location.assign('index.php')</script>";
+        echo "<script>window.location.assign('dashboard.php?msg=Login Success')</script>";
     }
     else{
         echo "<script>window.location.assign('login.php?msg=Invaild creeds')</script>";

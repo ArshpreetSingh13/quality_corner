@@ -30,8 +30,8 @@ include("heading.php")
                                 placeholder="Enter Your password">
 
                             <!-- contact -->
-                            <input type="number" class="B w-100 form-control border-0 py-3 mb-4 " name="contact"
-                                placeholder="Contact">
+                            <input type="tel" class="form-control" name="contact" placeholder="Contact"
+       pattern="\d{10}" title="Please enter a 10-digit phone number" required>
 
                             <!-- city -->
                             <input type="text" class="B w-100 form-control border-0 py-3 mb-4" name="city"
